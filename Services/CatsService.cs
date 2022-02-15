@@ -37,7 +37,7 @@ namespace petshop.Services
     {
       // NOTE sent in catId anyways for readability
       Cat originalCat = GetById(catId);
-      // NOTE this is called null coalescence 
+      // NOTE this is called null coalescence - do not want users to be able to add null data to the "database"
       originalCat.Name = editedCat.Name != null ? editedCat.Name : originalCat.Name;
       originalCat.Age = editedCat.Age != 0 ? editedCat.Age : originalCat.Age;
       return originalCat;
